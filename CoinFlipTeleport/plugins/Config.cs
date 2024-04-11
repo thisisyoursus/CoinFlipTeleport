@@ -45,7 +45,6 @@ namespace CoinFlipTeleport
             RoomType.HczTCross,
             RoomType.HczTesla,
             RoomType.HczTestRoom,
-            RoomType.Lcz173,
             RoomType.Lcz330,
             RoomType.Lcz914,
             RoomType.LczAirlock,
