@@ -65,8 +65,7 @@ namespace CoinFlipTeleport
         bool IsLczRoom(RoomType room)
         {
 
-            return room == RoomType.Lcz173 ||
-                   room == RoomType.Lcz330 ||
+            return room == RoomType.Lcz330 ||
                    room == RoomType.Lcz914 ||
                    room == RoomType.LczAirlock ||
                    room == RoomType.LczArmory ||
