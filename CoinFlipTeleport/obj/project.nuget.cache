@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "61G2iolnvmwEN0f5ffLEnIimGvjqveU0+7KR3UhwinaSFkMdoQSGB2pcNLT7b7c14IUAs1ZUrE+i8thkZ4npag==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\fujit\\Downloads\\CoinFlipTeleport\\CoinFlipTeleport\\CoinFlipTeleport\\CoinFlipTeleport.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fujit\\.nuget\\packages\\exiled\\8.8.1\\exiled.8.8.1.nupkg.sha512"
+  ],
+  "logs": []
+}

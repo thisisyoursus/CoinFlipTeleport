@@ -31,44 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="plugins\Plugin.cs" />
-    <Compile Include="plugins\Config.cs" />
+    <Compile Include="NoTrollBombs\Plugin.cs" />
+    <Compile Include="NoTrollBombs\EventHandlers.cs" />
+    <Compile Include="CoinFlipTeleport\MainPlugin.cs" />
+    <Compile Include="CoinFlipTeleport\Config.cs" />
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EXILED">
-      <Version>8.8.1</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\OneDrive\デスクトップ\Master\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="Mirror">
-      <HintPath>..\..\..\..\OneDrive\デスクトップ\Master\Mirror.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\OneDrive\デスクトップ\Master\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\OneDrive\デスクトップ\Master\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\..\OneDrive\デスクトップ\Master\UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
