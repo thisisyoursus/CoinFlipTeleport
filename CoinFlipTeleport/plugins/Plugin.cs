@@ -46,7 +46,7 @@ namespace CoinFlipTeleport
                 ev.Item.Destroy();
             }
 
-            if(Map.DecontaminationState == DecontaminationState.Lockdown || Map.DecontaminationState == DecontaminationState.Countdown || Map.DecontaminationState == DecontaminationState.Remain1Minute)
+            if(Map.DecontaminationState == DecontaminationState.Lockdown || Map.DecontaminationState == DecontaminationState.Countdown || Map.DecontaminationState == DecontaminationState.Remain1Minute　|| Map.DecontaminationState == DecontaminationState.Finish)
             {
                 if (_Config.CanTeleportIntoLockedLCZ)
                 {
