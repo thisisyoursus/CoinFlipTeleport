@@ -63,6 +63,7 @@ namespace CoinFlipTeleport
             RoomType.LczToilets,
             RoomType.Surface,
         };
-
+        [Description("When Lcz locked，can be teleport into Lcz")]
+        public bool CanTeleportIntoLockedLCZ { get; set; } = false;
     }
 }
