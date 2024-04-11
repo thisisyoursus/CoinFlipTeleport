@@ -10,7 +10,7 @@ namespace CoinFlipTeleport
 {
     public class Plugin : Plugin<Config>
     {
-        public Config _Config;
+        public Config _Config = new Config();
         public override Version Version => new Version(4, 5, 0);
         public override string Author => "Akinasu333";
         public override string Name => "CoinFlipTeleport";
