@@ -26,7 +26,12 @@ namespace CoinFlipTeleport
         }
         public void Flipper(FlippingCoinEventArgs ev)
         {
-            if (Warhead.IsDetonated)
+            if (ev.Player == null)
+            {
+                Exiled.API.Features.Log.Error("Flipper method received a null player reference.");
+                return;
+            }
+            if ( Warhead.IsDetonated)
             {
                 Scp330 candy = (Scp330)Item.Create(ItemType.SCP330);
                 candy.AddCandy(InventorySystem.Items.Usables.Scp330.CandyKindID.Red);
@@ -36,11 +41,48 @@ namespace CoinFlipTeleport
             }
             else
             {
-                Room randomRoom = Room.Get(_Config.RoomsToTeleport.GetRandomValue());
-                ev.Player.Teleport(randomRoom.Position);
+                
+                ev.Player.Teleport(Room.Get(_Config.RoomsToTeleport.GetRandomValue()));
                 ev.Item.Destroy();
             }
+
+            if(Map.DecontaminationState == DecontaminationState.Lockdown || Map.DecontaminationState == DecontaminationState.Countdown || Map.DecontaminationState == DecontaminationState.Remain1Minute)
+            {
+                if (_Config.CanTeleportIntoLockedLCZ)
+                {
+                    ev.Player.Teleport(Room.Get(_Config.RoomsToTeleport.GetRandomValue()));
+                    ev.Item.Destroy();
+                }
+                else
+                {
+                    var nonLczRooms = _Config.RoomsToTeleport.Where(room => !IsLczRoom(room)).ToList();
+                    ev.Player.Teleport(Room.Get(nonLczRooms.GetRandomValue()));
+                    ev.Item.Destroy();
+                }
+            }
+
+        }
+        bool IsLczRoom(RoomType room)
+        {
+
+            return room == RoomType.Lcz173 ||
+                   room == RoomType.Lcz330 ||
+                   room == RoomType.Lcz914 ||
+                   room == RoomType.LczAirlock ||
+                   room == RoomType.LczArmory ||
+                   room == RoomType.LczCafe ||
+                   room == RoomType.LczCheckpointA ||
+                   room == RoomType.LczCheckpointB ||
+                   room == RoomType.LczClassDSpawn ||
+                   room == RoomType.LczCrossing ||
+                   room == RoomType.LczCurve ||
+                   room == RoomType.LczGlassBox ||
+                   room == RoomType.LczPlants ||
+                   room == RoomType.LczStraight ||
+                   room == RoomType.LczTCross ||
+                   room == RoomType.LczToilets;
         }
     }
+
 
 }
